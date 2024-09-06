@@ -19,7 +19,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cursos',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken' #auth token
 
 ]
 
@@ -93,10 +94,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#DRV
 
 REST_FRAMEWORK ={
     'DEFAULT_AUTHENTICATION_CLASSES' : (
-        'rest_framework.authentication.SessionAuthentication',
+        #'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
@@ -106,3 +109,7 @@ REST_FRAMEWORK ={
     'PAGE_SIZE' : 2
 
 }
+
+# e22d760b2e11d2563b2a0ed52da54137fccefc27
+
+# 123ub456
